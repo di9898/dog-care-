@@ -1171,7 +1171,7 @@ header .logo {
 }
 .content-section-3{
     padding-left: 0;
-    padding-top: 10px;
+    padding-top: 20px;
 }
 .img-section-1, .img-section-3 {
     display: block;
@@ -1213,7 +1213,7 @@ header .logo {
     flex-direction: column;
 }
 .content-section-1 {
-    padding-top: 10px;
+    padding-top: 20px;
     order: 2;
 }
 .max-content-3, .max-section-1{
@@ -1251,6 +1251,10 @@ header .logo {
 .head-section-4 p{
     padding-top: 0;
 }
+.taxe-section-5 {
+    width: 100%;
+    padding: 20px 0;
+}
 
 .section-6 {
     height: auto;
@@ -1281,6 +1285,7 @@ header .logo {
 
 .content-section-7 {
     text-align: center;
+    padding-top: 20px;
 }
 .box-7 {
     padding-bottom: 40px;
@@ -1374,8 +1379,8 @@ header .logo {
 .content-section-3{
     padding-left: 0;
 }
-.head-section-7 p{
-    padding-top: 5px;
+.head-section-4 p,.head-section-7 p{
+    padding-top: 10px;
 }
 
 .text-8 {
