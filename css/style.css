@@ -166,6 +166,27 @@ header input[type="submit"]{
 	background-position: center;
 }
 
+.mobile-menu img:last-child,.mm-wrapper--opened .mobile-menu img:first-child{
+    display: none;
+}
+.mm-wrapper--opened .mobile-menu img:last-child{
+    display: block;
+}
+.mm-wrapper--opened nav#menu{
+    display: block;
+}
+nav#menu{
+    display: none;
+}
+.mobile-menu{
+    /*display: none;  */
+}
+.mm-navbar__title span{
+    font-size: 20px;
+    line-height: 22px;
+    color: #000;
+}
+
 /*-------header---end-----*/
 /*-------banner----start--*/
 .banner{
@@ -230,7 +251,56 @@ header input[type="submit"]{
     vertical-align: middle;
     line-height: 1px;
 }
+.owl-carousel{
+    float: left;
+    width: 100%;
+}
 
+
+
+.owl-dots {
+    width: 100%;
+    text-align: center;
+}
+
+.owl-dot span{
+    width: 20px;
+    height: 20px;
+    border: 1px solid #fff;
+    display: inline-block;
+    margin: 5px 10px;
+    border-radius: 50%;
+    background: #fff;
+}
+.owl-dot.active span{
+    background: #00bec9;
+}
+
+.owl-nav {
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.owl-nav span{
+    display: none;
+}
+.owl-prev{
+    background: url(../images/laft-arrow.png) no-repeat !important;
+    background-size: cover !important;
+    float: left;
+    width: 40px;
+    height: 40px;
+    margin-left: 50px;
+}
+.owl-next{
+    background: url(../images/right-arrow.png) no-repeat !important;
+    background-size: cover !important;
+    float: right;
+    width: 40px;
+    height: 40px;
+    margin-right: 50px;
+}
 /*--------banner--end-----*/
 /*---------section-1----start---*/
 
@@ -541,17 +611,26 @@ header input[type="submit"]{
     content: "";
     background: #daac00;
     position: absolute;
-    border-radius: 25px;
+    border-radius: 25px 0 0 25px;
     width: 0;
-    height: 100%;
     bottom: 0;
     top: 0;
     left: 0;
+    transition-duration: 600ms;
+}
+.bottun:before{
+    content: "";
+    background: #daac00;
+    position: absolute;
+    border-radius: 0 25px 25px 0;
+    width: 0;
+    bottom: 0;
+    top: 0;
     right: 0;
     transition-duration: 600ms;
 }
-.bottun:hover:after{
-    width: 100%;
+.bottun:hover:after,.bottun:hover:before{
+    width: 50%;
 }
 .btn-section-4 span{
     position: relative;
@@ -1042,6 +1121,26 @@ nav ul li a {
     height: 50px;
     width: 100%;
 }
+
+
+
+.owl-prev{
+    margin-left: 10px;
+}
+.owl-next{
+    margin-right: 10px;
+}
+.owl-dot span{
+    margin: 5px 5px;
+}
+
+
+
+
+
+
+
+
 }
 
 
@@ -1081,6 +1180,9 @@ nav ul li a {
     font-size: 28px;
     line-height: 29px;
     padding-top: 20px;
+}
+.owl-nav{
+    display: none;
 }
 }
 
@@ -1131,6 +1233,14 @@ header nav{
  }   
 header .logo {
     width: 100%;
+    position: relative;
+}
+.mobile-menu{
+    display: block;
+    position: absolute;
+    z-index: 1;
+    top: 15px;
+    left: 10px;
 }
 .icon{
     display: none;

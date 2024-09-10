@@ -1,19 +1,26 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>venterinary-1234</title>
+    <link rel="stylesheet" type="text/css" href="css/owl.carousel.min.css">
 	<link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="css/mmenu.css">
 </head>
 <body>
  <!------------- header-secton ----------->
+ <div id="page">
     <header class="container">
+    <div class="mobile-menu">
+        <a href="#menu" title=""><img width="30px" src="images/menu.png"><img width="30px" src="images/close.png"></a>
+        
+    </div>
+
         <div class="row">
             <div class="logo">
                 <a href="#"><img src="images/logo.png" alt=""></a>
             </div>
-            <nav>
+            <nav id="menu">
                 <ul>
                     <li><a href="#">Home</a></li>
                     <li><a href="#">About</a></li>
@@ -34,6 +41,8 @@
     <!------------- header-secton  end----------->
 
     <!------------ banner-start ------------>
+<div class="owl-carousel owl-theme">
+<div class="item">
     <section class="container banner">
         <div class="row">
         	<div class="table">
@@ -54,6 +63,30 @@
         </div>
         </div>
     </section>
+</div>
+<div class="item">
+    <section class="container banner">
+        <div class="row">
+            <div class="table">
+            <div class="content-section">
+                <div class="max-section">
+                    <h2>First I wanted to be
+                        a veterinarian</h2>
+                    <p>Lorem Ipsum available but the majority have
+                        suffered alteration in some form, by injected
+                        humour randomised words.</p>
+                        <a href="#" title="Contact Us">Contact Us</a>
+                        <a href="#" title="Our Service">Our Service</a>
+                </div>
+            </div>
+            <div class="img-section">
+                <img src="images/dog1.png" alt="">
+            </div>
+        </div>
+        </div>
+    </section>
+</div>
+</div>
     <!-- banner-end-------- -->
     <!-- section-1-start-------- -->
       <section class="container section-1">
@@ -404,6 +437,35 @@
                 </div>
             </div>
         </section>
+    </div>
 <!-- --------------section-8-end -->
+<script type="text/javascript" src="js/jquery-3.7.1.js"></script>
+<script type="text/javascript" src="js/owl.carousel.min.js"></script>
+<script type="text/javascript" src="js/custom.js"></script>
+<script type="text/javascript" src="js/mmenu.js"></script>
+<script type="text/javascript">
+    
+    document.addEventListener('DOMContentLoaded', () => {
+
+                                    new Mmenu("#menu", {        theme       : "white",
+        navbars     : {
+            content : [ "prev", "title" ]
+        },
+    
+        setSelected : {
+            hover: true
+        }}, {});
+                
+                            });
+
+
+
+
+</script>
+
+
+
+
+
 </body>
 </html>
