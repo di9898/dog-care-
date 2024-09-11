@@ -179,12 +179,13 @@ nav#menu{
     display: none;
 }
 .mobile-menu{
-    /*display: none;  */
+    display: none;
 }
 .mm-navbar__title span{
-    font-size: 20px;
-    line-height: 22px;
-    color: #000;
+    font-family: 'Poppins-Medium';
+    color: inherit;
+    font-size: 29px;
+    line-height: 31px;
 }
 
 /*-------header---end-----*/
@@ -1227,6 +1228,15 @@ header nav{
 }
 }
 
+
+
+
+
+
+
+
+
+
 @media (max-width: 767px){
  header{
     text-align: center;
@@ -1241,6 +1251,9 @@ header .logo {
     z-index: 1;
     top: 15px;
     left: 10px;
+}
+.owl-nav {
+    display: block;
 }
 .icon{
     display: none;
