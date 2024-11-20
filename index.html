@@ -1,9 +1,10 @@
-<!DOCTYPE html>
+    <!DOCTYPE html>
 <html>
 <head>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>venterinary-1234</title>
     <link rel="stylesheet" type="text/css" href="css/owl.carousel.min.css">
+    <link rel="stylesheet" type="text/css" href="css/jquery.mCustomScrollbar.min.css">
 	<link rel="stylesheet" type="text/css" href="css/style.css">
     <link rel="stylesheet" type="text/css" href="css/mmenu.css">
 </head>
@@ -309,30 +310,30 @@
     <div class="row">
         <div class="table">
         <div class="mrg-6">
-            <div class="box-6">
+            <div class="box-6 animatable">
                 <div class="img-section-6">
                     <img src="images/haerds-icon.png" alt=""/>
                 </div>
                 <div class="content-section-6">
-                    <h2>+34793</h2>
+                    <h2 class="stat-number">+34793</h2>
                     <p>Happy Clients</p>
                 </div>
             </div>
-            <div class="box-6">
+            <div class="box-6 animatable">
                 <div class="img-section-6">
                     <img src="images/dr-icon.png" alt=""/>
                 </div>
                 <div class="content-section-6">
-                    <h2>+45382</h2>
+                    <h2 class="stat-number">+45382</h2>
                     <p>Departament</p>
                 </div>
             </div>
-            <div class="box-6">
+            <div class="box-6 animatable">
                 <div class="img-section-6">
                     <img src="images/ing-icon.png" alt=""/>
                 </div>
                 <div class="content-section-6">
-                    <h2>+54762</h2>
+                    <h2 class="stat-number">+54762</h2>
                     <p>Vaccinations</p>
                 </div>
             </div>
@@ -448,11 +449,13 @@
     </div>
 <!-- --------------section-8-end -->
 <script type="text/javascript" src="js/jquery-3.7.1.js"></script>
+<script type="text/javascript" src="js/jquery-2.2.4.min.js"></script>
 <script type="text/javascript" src="js/owl.carousel.min.js"></script>
 <script type="text/javascript" src="js/custom.js"></script>
 <script type="text/javascript" src="js/mmenu.js"></script>
 <script type="text/javascript">
-    
+
+
     document.addEventListener('DOMContentLoaded', () => {
 
                                     new Mmenu("#menu", {        theme       : "white",
@@ -466,6 +469,57 @@
                 
                             });
 
+
+
+
+// Trigger CSS animations on scroll.
+// Detailed explanation can be found at http://www.bram.us/2013/11/20/scroll-animations/
+
+// Looking for a version that also reverses the animation when
+// elements scroll below the fold again?
+// --> Check https://codepen.io/bramus/pen/vKpjNP
+
+jQuery(function($) {
+  
+  // Function which adds the 'animated' class to any '.animatable' in view
+  var doAnimations = function() {
+    
+    // Calc current offset and get all animatables
+    var offset = $(window).scrollTop() + $(window).height(),
+        $animatables = $('.animatable');
+    
+    // Unbind scroll handler if we have no animatables
+    if ($animatables.length == 0) {
+      $(window).off('scroll', doAnimations);
+      $('.stat-number').each(function () {
+   var size = $(this).text().split(".")[1] ? $(this).text().split(".")[1].length : 0;
+   $(this).prop('Counter', 0).animate({
+      Counter: $(this).text()
+   }, {
+      duration: 5000,
+      step: function (func) {
+         $(this).text(parseFloat(func).toFixed(size));
+      }
+   });
+});
+
+    }
+    
+    // Check all animatables and animate them if necessary
+        $animatables.each(function(i) {
+       var $animatable = $(this);
+            if (($animatable.offset().top + $animatable.height() - 20) < offset) {
+        $animatable.removeClass('animatable').addClass('animated');
+            }
+    });
+
+    };
+  
+  // Hook doAnimations on scroll, and trigger a scroll
+    $(window).on('scroll', doAnimations);
+  $(window).trigger('scroll');
+
+});
 
 
 

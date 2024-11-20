@@ -935,6 +935,7 @@ nav#menu{
     color: #fff;
     line-height: 26px;
     padding-left: 10px;
+    padding-right: 10px;
 }
 
 .max input[type="submit"]{
@@ -948,6 +949,9 @@ nav#menu{
 .icon-8 a{
     display: inline-block;
     padding: 5px;
+}
+.icon-8 a:hover{
+    opacity: 0.7;
 }
 .footer-8 input[type="submit"]{
     background-image: url(../images/sherch-2-icon.png);
@@ -1249,7 +1253,7 @@ header .logo {
     display: block;
     position: absolute;
     z-index: 1;
-    top: 15px;
+    top: 35px;
     left: 10px;
 }
 .owl-nav {
@@ -1257,6 +1261,10 @@ header .logo {
 }
 .icon{
     display: none;
+}
+.owl-dot span {
+    width: 10px;
+    height: 10px;
 }
 .banner .table{
     display: flex;
